@@ -25,7 +25,7 @@ const mockUsers: User[] = [
     distance: 0.1,
     favoriteDrink: "Виски",
     drinkType: "Крепкие",
-    image: "/img/e44ed428-cc05-4d1d-9f84-02c4f4be8d76.jpg",
+    image: "/img/481bdb0d-8051-4660-9c4a-3c09d69b77ab.jpg",
     location: "Центр",
     isOnline: true
   },
@@ -36,7 +36,7 @@ const mockUsers: User[] = [
     distance: 0.5,
     favoriteDrink: "Мартини",
     drinkType: "Коктейли",
-    image: "/img/e44ed428-cc05-4d1d-9f84-02c4f4be8d76.jpg",
+    image: "/img/4e3303bb-0cc5-4cda-9526-5878a55f7dfa.jpg",
     location: "Арбат",
     isOnline: true
   },
@@ -47,7 +47,7 @@ const mockUsers: User[] = [
     distance: 1.2,
     favoriteDrink: "Красное вино",
     drinkType: "Вино",
-    image: "/img/e44ed428-cc05-4d1d-9f84-02c4f4be8d76.jpg",
+    image: "/img/7912d3b6-132e-468c-bb94-6e376e26eb23.jpg",
     location: "Замоскворечье",
     isOnline: false
   },
@@ -58,7 +58,7 @@ const mockUsers: User[] = [
     distance: 2.1,
     favoriteDrink: "Джин-тоник",
     drinkType: "Коктейли",
-    image: "/img/e44ed428-cc05-4d1d-9f84-02c4f4be8d76.jpg",
+    image: "/img/481bdb0d-8051-4660-9c4a-3c09d69b77ab.jpg",
     location: "Таганка",
     isOnline: true
   }
@@ -129,6 +129,11 @@ export default function Index() {
               <div className="relative">
                 {/* Profile Image */}
                 <div className="h-32 bg-gradient-to-br from-primary/20 to-primary/5 relative overflow-hidden">
+                  <img 
+                    src={user.image} 
+                    alt={user.name}
+                    className="w-full h-full object-cover"
+                  />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent" />
                   
                   {/* Online Status */}
@@ -205,10 +210,10 @@ export default function Index() {
             <span className="text-sm font-medium">Поблизости: {filteredUsers.length}</span>
           </div>
           <div className="w-px h-4 bg-border" />
-          <div className="flex items-center gap-2 text-muted-foreground">
-            <Icon name="Filter" size={20} />
-            <span className="text-sm">Фильтры</span>
-          </div>
+          <Button variant="ghost" size="sm" onClick={() => window.location.href = '/profile'}>
+            <Icon name="User" size={20} />
+            <span className="text-sm ml-1">Профиль</span>
+          </Button>
         </div>
       </div>
     </div>
