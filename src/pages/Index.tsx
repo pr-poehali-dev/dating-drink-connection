@@ -164,7 +164,11 @@ export default function Index() {
                         {user.location}
                       </p>
                     </div>
-                    <Button size="sm" className="rounded-full px-6 bg-primary hover:bg-primary/90 transition-colors">
+                    <Button 
+                      size="sm" 
+                      className="rounded-full px-6 bg-primary hover:bg-primary/90 transition-colors"
+                      onClick={() => window.location.href = `/chat?user=${user.id}`}
+                    >
                       <Icon name="Heart" size={14} className="mr-1" />
                       Связаться
                     </Button>
